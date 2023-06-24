@@ -9,18 +9,18 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav)
   }
-  // useEffect(() => {
-  //   const changeColor = () => {
-  //     if (window.scrollY >= 90) {
-  //       setColor('#ffffff')
-  //       setTextColor('#ffffff')
-  //     } else {
-  //       setColor('transparent')
-  //       setTextColor('#ffffff')
-  //     }
-  //   }
-  //   window.addEventListener('scroll', changeColor)
-  // }, [])
+  useEffect(() => {
+    const changeColor = () => {
+      if (window.scrollY >= 90) {
+        setColor('#ffffff')
+        setTextColor('#000000')
+      } else {
+        setColor('transparent')
+        setTextColor('#ffffff')
+      }
+    }
+    window.addEventListener('scroll', changeColor)
+  }, [])
   return (
     <div
       style={{ backgroundColor: `${color}` }}
@@ -32,7 +32,7 @@ const Navbar = () => {
             Capture
           </h1>
         </Link>
-        <ul className="hidden sm:flex">
+        <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
           <li className="p-4">
             <Link href="/">Home</Link>
           </li>
